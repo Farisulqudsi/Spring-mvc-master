@@ -1,15 +1,8 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Faris
-  Date: 04.05.2023
-  Time: 17:33
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>User info</title>
+    <meta charset="UTF-8">
+    <title>New User</title>
 </head>
 <body>
 <form th:method="POST" th:action="saveUser" th:object="${user}">
@@ -18,8 +11,8 @@
     <input name="name" type="text" id="name"/>
     <br/>
 
-    <label for="firstName">Enter firstName:</label>
-    <input name="firstName" type="text" id="firstName"/>
+    <label for="surname">Enter surname:</label>
+    <input name="surname" type="text" id="surname"/>
     <br/>
 
 

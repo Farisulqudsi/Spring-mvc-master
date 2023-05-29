@@ -1,9 +1,8 @@
-<!Doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <title>All users</title>
 </head>
 <body>
 <table>
@@ -13,16 +12,20 @@
         <th>Operations</th>
     </tr>
 
-    <tr th:each="user : ${all_users}">
+    <tr th:each="user : ${allUsers}">
 
         <td th:text="${user.getName()}"></td>
         <td th:text="${user.getSurname()}"></td>
-        <td th:text="${user.getEmail()}"></td>
 
         <td>
             <form th:method="GET" th:action="@{/editUser/{id}(id = ${user.getId()})}">
                 <input type="hidden" name="_method" value="delete">
                 <input type="submit" value="Update"/>
+            </form>
+        </td>
+        <td>
+            <form th:method="POST" th:action="@{/delete/{id}(id=${user.getId()})}">
+                <input type="submit" value="Delete"/>
             </form>
         </td>
 
